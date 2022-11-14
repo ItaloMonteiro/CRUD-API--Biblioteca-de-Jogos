@@ -11,12 +11,14 @@ mongoose.connect('mongodb://localhost:27017/mean', { useNewUrlParser: true }).th
 
 const userRoute = require('./routes/user.route');
 const industryRoute = require('./routes/industry.route');
+const jogoRoute = require('./routes/jogo.route');
 var app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/user', userRoute);
 app.use('/industry', industryRoute);
+app.use('/jogo', jogoRoute);
 app.get('/', function(req, res){
    res.send("Hello World!");
 });
